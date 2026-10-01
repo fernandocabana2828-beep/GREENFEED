@@ -1,0 +1,368 @@
+/* ==========================================================================
+   1. RESET Y CONFIGURACIÓN BÁSICA
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Paleta de colores */
+    --primary-color: #2e7d32;      /* Verde bosque principal */
+    --primary-hover: #1b5e20;      /* Verde oscuro para estados hover */
+    --accent-color: #81c784;       /* Verde claro / menta */
+    --bg-light: #f4f8f5;           /* Fondo suave verde muy claro */
+    --card-bg: #ffffff;            /* Fondo blanco para tarjetas y secciones */
+    --text-color: #2c3e50;         /* Texto principal legible */
+    --text-light: #666666;        /* Texto secundario */
+    --border-color: #e0e0e0;      /* Bordes sutiles */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Ocultar las líneas divisorias HTML por defecto */
+hr {
+    display: none;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN (HEADER & NAV)
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #4caf50);
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.95;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   3. SECCIONES Y CONTENEDORES GENERALES
+   ========================================================================== */
+section {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+section p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   4. INTRODUCCIÓN Y BENEFICIOS
+   ========================================================================== */
+#introduccion,
+#beneficios {
+    overflow: hidden;
+}
+
+#introduccion img,
+#beneficios img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+    box-shadow: var(--shadow);
+}
+
+/* Listas estilizadas */
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+ul li, ol li {
+    margin-bottom: 0.6rem;
+}
+
+#beneficios ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#beneficios ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+#beneficios ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   5. TABLA DE INGREDIENTES
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--bg-light);
+}
+
+tbody tr:hover {
+    background-color: rgba(129, 199, 132, 0.15);
+}
+
+/* ==========================================================================
+   6. ARTÍCULOS Y RECETAS
+   ========================================================================== */
+article {
+    background-color: var(--bg-light);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+article h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+article h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   7. GALERÍA DE IMÁGENES (GRID DE FOTOS)
+   ========================================================================== */
+#galeria {
+    background-color: transparent;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#galeria h2, #galeria p {
+    text-align: center;
+    display: block;
+}
+
+#galeria h2 {
+    margin: 0 auto 0.5rem auto;
+}
+
+/* Contenedor Grid para la galería */
+#galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+#galeria h2,
+#galeria > p {
+    grid-column: 1 / -1;
+}
+
+figure {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* ==========================================================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   9. DISEÑO ADAPTABLE (RESPONSIVE DESIGN)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin: 1.5rem 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.6rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+    }
+}
+/* ==========================================
+   ESTILOS EXCLUSIVOS PARA EL LOGO
+   ========================================== */
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Imagen del logo */
+.logo {
+    height: 60px;          /* Ajusta la altura según lo necesites */
+    width: auto;           /* Mantiene la proporción original */
+    max-width: 100%;       /* Evita que desborde en pantallas pequeñas */
+    object-fit: contain;  /* Asegura que la imagen no se deforme */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (opcional) */
+.logo:hover {
+    transform: scale(1.05);
+}
